@@ -1,171 +1,166 @@
-body {
-font-family: Arial, sans-serif; / ตั้งค่าฟอนต์หลัก /
-line-height: 1.6; / ระยะห่างระหว่างบรรทัดเพื่อให้ง่ายต่อการอ่าน /
-margin: 0;
-padding: 0;
-background-color: #f4f4f4; / สีพื้นหลังของเว็บ /
-color: #333; / สีตัวอักษรหลัก */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
-/* 2. ส่วนหัว (header) /
-header {
-background: #4CAF50; / สีพื้นหลังของส่วนหัว /
-color: white; / สีข้อความ /
-padding: 20px 0; / ระยะห่างด้านบนและล่าง /
-text-align: center; / จัดข้อความกึ่งกลาง */
+body{
+    font-family:'Prompt',sans-serif;
+    background:linear-gradient(135deg,#ffe6f3,#f7d9ff,#e8e6ff);
+    background-attachment:fixed;
+    color:#444;
+    line-height:1.8;
 }
 
-header h1 {
-margin: 0;
+/* ===============================
+   Header
+================================== */
+header{
+    background:linear-gradient(135deg,#ff7eb3,#ff65a3,#b388ff);
+    color:white;
+    text-align:center;
+    padding:70px 20px;
+    border-bottom-left-radius:40px;
+    border-bottom-right-radius:40px;
+    box-shadow:0 8px 25px rgba(255,105,180,.35);
 }
 
-header p {
-margin: 5px 0 0; /* ตั้งค่าระยะห่างของข้อความรอง */
+header h1{
+    font-size:3rem;
+    font-weight:700;
+    text-shadow:2px 2px 8px rgba(0,0,0,.2);
 }
 
-/* 3. ส่วนเนื้อหา (section) /
-section {
-padding: 20px;
-margin: 20px auto;
-max-width: 800px; / จำกัดความกว้างของเนื้อหา /
-background: white; / พื้นหลังสีขาว /
-border-radius: 8px; / ทำให้ขอบมน /
-box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); / เพิ่มเงาเบาๆ */
+header p{
+    margin-top:15px;
+    font-size:1.2rem;
+    opacity:.95;
 }
 
-/* 4. หัวข้อ (h2) /
-h2 {
-color: #4CAF50; / สีของหัวข้อ */
+/* ===============================
+   Section
+================================== */
+section{
+    width:90%;
+    max-width:900px;
+    margin:35px auto;
+    padding:30px;
+
+    background:rgba(255,255,255,.92);
+    backdrop-filter:blur(8px);
+
+    border-radius:25px;
+
+    box-shadow:0 15px 35px rgba(255,105,180,.15);
+
+    transition:.35s;
 }
 
-/* 5. ส่วนแสดงโพรเจกต์ (.project) */
-.project {
-margin-bottom: 20px;
+section:hover{
+    transform:translateY(-8px);
+    box-shadow:0 20px 45px rgba(179,136,255,.3);
 }
 
-.project h3 {
-margin: 0 0 10px;
-color: #333;
+/* ===============================
+   Heading
+================================== */
+h2{
+    color:#ff4f9a;
+    font-size:1.8rem;
+    margin-bottom:20px;
+    display:inline-block;
+    border-bottom:4px solid #ffc2dd;
+    padding-bottom:5px;
 }
 
-/* 6. รายการทักษะ (ul) /
-ul {
-list-style-type: square; / ใช้จุดสี่เหลี่ยมแทนจุดกลม */
-padding-left: 20px;
+/* ===============================
+   Project
+================================== */
+.project{
+    background:linear-gradient(135deg,#fff0f8,#f6edff);
+
+    border-left:8px solid #ff69b4;
+
+    padding:20px;
+
+    margin-bottom:20px;
+
+    border-radius:18px;
+
+    transition:.3s;
 }
 
-/* 7. ส่วนท้าย (footer) /
-footer {
-text-align: center;
-padding: 10px 0;
-background: #333; / สีพื้นหลังเข้ม */
-color: white;
-margin-top: 20px;
-}
-/* นำเข้าฟอนต์ Google Font (Sarabun และ Prompt) เพื่อความเข้ากันกับธีม */
-@import url('https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600&family=Sarabun:wght@300;400;500;600&display=swap');
-
-/* 1. การตั้งค่าทั่วไป (Global Styles) */
-body {
-    font-family: 'Prompt', 'Sarabun', Arial, sans-serif;
-    line-height: 1.7;
-    margin: 0;
-    padding: 0;
-    background-color: #FFF5F5; /* สีพื้นหลังขาวอมชมพูอ่อนมากๆ ดูซอฟต์ */
-    color: #4A3E3D; /* สีตัวอักษรน้ำตาลเข้มปนเทา เข้ากับสีชมพูได้ดีกว่าสีดำสนิท */
+.project:hover{
+    transform:scale(1.02);
+    box-shadow:0 10px 25px rgba(255,105,180,.25);
 }
 
-/* 2. ส่วนหัว (Header) */
-header {
-    /* ไล่เฉดสีชมพูพาสเทลละมุนๆ */
-    background: linear-gradient(135deg, #FFD1DC, #FFA6B9); 
-    color: #5C3D42; /* สีข้อความโทนน้ำตาลเข้มอมชมพูเพื่อให้อ่านง่ายและเข้าธีม */
-    padding: 60px 20px;
-    text-align: center;
-    box-shadow: 0 4px 10px rgba(255, 166, 185, 0.15);
+.project h3{
+    color:#b03a8b;
+    margin-bottom:10px;
 }
 
-header h1 {
-    margin: 0;
-    font-size: 2.6rem;
-    font-weight: 600;
-    letter-spacing: 0.5px;
+/* ===============================
+   Skills
+================================== */
+ul{
+    list-style:none;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
+    gap:15px;
 }
 
-header p {
-    margin: 10px 0 0;
-    font-size: 1.1rem;
-    opacity: 0.85;
+ul li{
+    background:linear-gradient(135deg,#ff8cc8,#b388ff);
+    color:white;
+
+    padding:12px;
+
+    border-radius:30px;
+
+    text-align:center;
+
+    font-weight:600;
+
+    transition:.3s;
 }
 
-/* 3. ส่วนเนื้อหา (Section) */
-section {
-    padding: 35px;
-    margin: 35px auto;
-    max-width: 800px;
-    background: #FFFFFF; /* พื้นหลังกล่องเนื้อหาสีขาวสะอาด */
-    border-radius: 16px; /* ขอบมนมากขึ้น เพิ่มความน่ารักและนุ่มนวล */
-    /* เงาสีชมพูจางๆ ฟุ้งๆ สไตล์โมเดิร์น */
-    box-shadow: 0 10px 30px rgba(224, 169, 175, 0.12); 
-    transition: all 0.3s ease;
+ul li:hover{
+    transform:translateY(-5px);
+    box-shadow:0 10px 20px rgba(179,136,255,.35);
 }
 
-/* เอฟเฟกต์เมื่อเมาส์ชี้ที่กล่องเนื้อหา */
-section:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 15px 35px rgba(224, 169, 175, 0.2);
+/* ===============================
+   Button
+================================== */
+button,
+.btn{
+    background:linear-gradient(135deg,#ff5fa2,#b388ff);
+    color:white;
+    border:none;
+    padding:12px 25px;
+    border-radius:30px;
+    font-size:16px;
+    cursor:pointer;
+    transition:.3s;
 }
 
-/* 4. หัวข้อ (h2) */
-h2 {
-    color: #DE7A8C; /* สีชมพูเข้มสำหรับหัวข้อ เพื่อความเด่นชัด */
-    font-size: 1.6rem;
-    border-bottom: 2px solid #FFE4E8; /* เส้นใต้สีชมพูอ่อน */
-    padding-bottom: 8px;
-    margin-top: 0;
+button:hover,
+.btn:hover{
+    transform:scale(1.08);
+    box-shadow:0 8px 20px rgba(255,105,180,.35);
 }
 
-/* 5. ส่วนแสดงโพรเจกต์ (.project) */
-.project {
-    margin-bottom: 25px;
-    padding: 15px 20px;
-    border-left: 4px solid #FFA6B9; /* แถบสีชมพูใสด้านซ้าย */
-    background-color: #FFF9FA; /* พื้นหลังในกล่องโปรเจกต์สีขาวอมชมพูระเรื่อ */
-    border-radius: 0 10px 10px 0;
-}
-
-.project h3 {
-    margin: 0 0 8px;
-    color: #5C3D42;
-    font-size: 1.2rem;
-}
-
-/* 6. รายการทักษะ (ul) */
-ul {
-    list-style-type: none;
-    padding-left: 0;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-    gap: 12px;
-}
-
-ul li {
-    background: #FFEBF0; /* กล่องทักษะสีชมพูนมพาสเทล */
-    color: #C95B6F; /* สีตัวอักษรชมพูเข้ม */
-    padding: 8px 15px;
-    border-radius: 20px; /* ทรงแคปซูลมนๆ */
-    font-size: 0.95rem;
-    text-align: center;
-    font-weight: 500;
-    border: 1px solid #FFD1DC; /* เส้นขอบบางๆ เพิ่มความเนี๊ยบ */
-}
-
-/* 7. ส่วนท้าย (Footer) */
-footer {
-    text-align: center;
-    padding: 25px 0;
-    background: #4A3E3D; /* สีน้ำตาลเข้มอบอุ่น (เข้ากับสีชมพูได้ละมุนกว่าสีดำเข้มๆ) */
-    color: #FFF5F5;
-    margin-top: 60px;
-    font-size: 0.9rem;
+/* ===============================
+   Footer
+================================== */
+footer{
+    margin-top:50px;
+    background:linear-gradient(135deg,#ff69b4,#b388ff);
+    color:white;
+    text-align:center;
+    padding:25px;
+    border-top-left-radius:35px;
+    border-top-right-radius:35px;
+    font-size:15px;
 }
