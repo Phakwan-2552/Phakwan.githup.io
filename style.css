@@ -1,14 +1,20 @@
-/* Google Font */
+/* =========================================
+   1. นำเข้าฟอนต์ Google Font
+========================================= */
 @import url('https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&display=swap');
 
-/* รีเซ็ตค่าเริ่มต้น */
+/* =========================================
+   2. รีเซ็ตค่าเริ่มต้นของเว็บไซต์
+========================================= */
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
 }
 
-/* พื้นหลัง */
+/* =========================================
+   3. พื้นหลังและการตั้งค่าทั่วไป (Body)
+========================================= */
 body{
     font-family:'Prompt',sans-serif;
     background:linear-gradient(135deg,#ffe4f2,#ffd6eb,#e7d8ff,#d8f3ff);
@@ -18,14 +24,18 @@ body{
     line-height:1.8;
 }
 
-/* เอฟเฟกต์พื้นหลัง */
+/* =========================================
+   4. เอฟเฟกต์พื้นหลัง
+========================================= */
 @keyframes bgMove{
     0%{background-position:0% 50%;}
     50%{background-position:100% 50%;}
     100%{background-position:0% 50%;}
 }
 
-/* ส่วนหัว */
+/* =========================================
+   5. ส่วนหัวเว็บไซต์ (Header)
+========================================= */
 header{
     background:linear-gradient(135deg,#ff66b2,#ff99cc,#c77dff);
     color:white;
@@ -47,20 +57,18 @@ header p{
     font-size:1.2rem;
 }
 
-/* กล่องเนื้อหา */
+/* =========================================
+   6. กล่องเนื้อหา (Section)
+========================================= */
 section{
     width:90%;
     max-width:900px;
     margin:35px auto;
     padding:30px;
-
     background:rgba(255,255,255,.92);
     backdrop-filter:blur(8px);
-
     border-radius:25px;
-
     box-shadow:0 15px 35px rgba(255,105,180,.15);
-
     transition:.3s;
 }
 
@@ -69,7 +77,9 @@ section:hover{
     box-shadow:0 20px 40px rgba(199,125,255,.35);
 }
 
-/* หัวข้อ */
+/* =========================================
+   7. หัวข้อ (H2)
+========================================= */
 h2{
     color:#ff4fa3;
     font-size:1.8rem;
@@ -79,7 +89,9 @@ h2{
     padding-bottom:6px;
 }
 
-/* โปรเจกต์ */
+/* =========================================
+   8. ส่วนแสดงโปรเจกต์ (.project)
+========================================= */
 .project{
     background:linear-gradient(135deg,#fff0f8,#f3ebff);
     border-left:8px solid #ff66b2;
@@ -99,7 +111,9 @@ h2{
     margin-bottom:10px;
 }
 
-/* รายการทักษะ */
+/* =========================================
+   9. รายการทักษะ (UL)
+========================================= */
 ul{
     list-style:none;
     display:grid;
@@ -123,16 +137,20 @@ ul li:hover{
     box-shadow:0 8px 20px rgba(199,125,255,.35);
 }
 
-/* รูปภาพ */
+/* =========================================
+   10. รูปภาพ (Image)
+========================================= */
 img{
     max-width:100%;
-    border-radius:20px;
     display:block;
     margin:auto;
+    border-radius:20px;
     box-shadow:0 8px 20px rgba(0,0,0,.15);
 }
 
-/* ปุ่ม */
+/* =========================================
+   11. ปุ่ม (Button)
+========================================= */
 button,
 .btn{
     background:linear-gradient(135deg,#ff5ea8,#c77dff);
@@ -152,7 +170,9 @@ button:hover,
     box-shadow:0 10px 25px rgba(255,105,180,.35);
 }
 
-/* ลิงก์ */
+/* =========================================
+   12. ลิงก์ (Link)
+========================================= */
 a{
     color:#ff4fa3;
     text-decoration:none;
@@ -163,7 +183,9 @@ a:hover{
     color:#b84d8d;
 }
 
-/* ส่วนท้าย */
+/* =========================================
+   13. ส่วนท้ายเว็บไซต์ (Footer)
+========================================= */
 footer{
     background:linear-gradient(135deg,#ff66b2,#c77dff);
     color:white;
