@@ -1,115 +1,200 @@
-!DOCTYPE html>
-<html lang="th">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio - Vertical Layout</title>
-    <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: 'Inter', 'Kanit', sans-serif;
-        }
+/* =========================================
+   1. นำเข้าฟอนต์ Google Font
+========================================= */
+@import url('https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&display=swap');
 
-        body {
-            background-color: #ffd1dc; /* พื้นหลังสีชมพูพาสเทลตามรูป */
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            min-height: 100vh;
-            padding: 20px;
-        }
+/* =========================================
+   2. รีเซ็ตค่าเริ่มต้นของเว็บไซต์
+========================================= */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
 
-        /* กล่องเนื้อหาหลัก (สีขาว) */
-        .container {
-            background-color: #ffffff;
-            border-radius: 24px;
-            padding: 30px;
-            width: 100%;
-            max-width: 500px; /* จำกัดความกว้างให้ดูเป็นแนวตั้งสวยงาม */
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-            margin-bottom: 25px;
-        }
+/* =========================================
+   3. พื้นหลังและการตั้งค่าทั่วไป (Body)
+========================================= */
+body{
+    font-family:'Prompt',sans-serif;
+    background:linear-gradient(135deg,#ffe4f2,#ffd6eb,#e7d8ff,#d8f3ff);
+    background-size:400% 400%;
+    animation:bgMove 12s ease infinite;
+    color:#555;
+    line-height:1.8;
+}
 
-        /* หัวข้อหลัก */
-        .section-title {
-            color: #ff4081;
-            font-size: 24px;
-            font-weight: bold;
-            margin-bottom: 8px;
-        }
+/* =========================================
+   4. เอฟเฟกต์พื้นหลัง
+========================================= */
+@keyframes bgMove{
+    0%{background-position:0% 50%;}
+    50%{background-position:100% 50%;}
+    100%{background-position:0% 50%;}
+}
 
-        /* เส้นใต้หัวข้อ */
-        .title-line {
-            height: 4px;
-            width: 80px;
-            background-color: #ff94c2;
-            border-radius: 2px;
-            margin-bottom: 25px;
-        }
+/* =========================================
+   5. ส่วนหัวเว็บไซต์ (Header)
+========================================= */
+header{
+    background:linear-gradient(135deg,#ff66b2,#ff99cc,#c77dff);
+    color:white;
+    text-align:center;
+    padding:70px 20px;
+    border-bottom-left-radius:40px;
+    border-bottom-right-radius:40px;
+    box-shadow:0 8px 25px rgba(255,105,180,.35);
+}
 
-        /* กลุ่มของปุ่ม/กล่องข้อความ จัดเรียงเป็นแนวตั้ง */
-        .item-list {
-            display: flex;
-            flex-direction: column; /* เปลี่ยนเป็นแนวตั้ง */
-            gap: 15px; /* ระยะห่างระหว่างกล่อง */
-        }
+header h1{
+    font-size:3rem;
+    font-weight:700;
+    text-shadow:2px 2px 8px rgba(0,0,0,.2);
+}
 
-        /* กล่องข้อความสีชมพู-ม่วง ไล่เฉดสี */
-        .gradient-box {
-            background: linear-gradient(135deg, #f48fb1, #ce93d8);
-            color: white;
-            padding: 18px 20px;
-            border-radius: 16px;
-            font-size: 16px;
-            font-weight: 500;
-            text-align: center;
-            line-height: 1.4;
-            box-shadow: 0 4px 10px rgba(206, 147, 216, 0.3);
-        }
+header p{
+    margin-top:15px;
+    font-size:1.2rem;
+}
 
-        /* รูปภาพประกอบขนาดเล็กสำหรับผลงาน */
-        .work-thumbnail {
-            width: 100px;
-            height: 100px;
-            border-radius: 100%;
-            object-fit: cover;
-            margin: 10px auto 0 auto;
-            display: block;
-            border: 2px solid #ffffff;
-        }
-    </style>
-</head>
-<body>
+/* =========================================
+   6. กล่องเนื้อหา (Section)
+========================================= */
+section{
+    width:90%;
+    max-width:600px; /* 🛠️ ปรับความกว้างลงเล็กน้อยจาก 900px เพื่อให้ทรงแนวตั้งดูสมดุลสวยงามขึ้น */
+    margin:35px auto;
+    padding:30px;
+    background:rgba(255,255,255,.92);
+    backdrop-filter:blur(8px);
+    border-radius:25px;
+    box-shadow:0 15px 35px rgba(255,105,180,.15);
+    transition:.3s;
+}
 
-    <div class="container">
-        <h2 class="section-title">ทักษะของผม</h2>
-        <div class="title-line"></div>
-        
-        <div class="item-list">
-            <div class="gradient-box">1. การบริหารเวลา</div>
-            <div class="gradient-box">2. การรีวิวและวิเคราะห์เนื้อเรื่องในหนัง</div>
-            <div class="gradient-box">3. การเรียนรู้ภาษาอังกฤษจากสื่อ (ซับไตเติ้ลเกม/หนัง)</div>
-            <div class="gradient-box">4. ความอดทนและตั้งใจ</div>
-        </div>
-    </div>
+section:hover{
+    transform:translateY(-8px);
+    box-shadow:0 20px 40px rgba(199,125,255,.35);
+}
 
-    <div class="container">
-        <h2 class="section-title">ผลงานวิชาคอมพิวเตอร์</h2>
-        <div class="title-line"></div>
-        
-        <div class="item-list">
-            <div class="gradient-box">
-                งานที่ 1. อินโฟกราฟิก
-                <img class="work-thumbnail" src="https://via.placeholder.com/50" alt="Infographic">
-            </div>
-            <div class="gradient-box">งานที่ 2.</div>
-            <div class="gradient-box">งานที่ 3.</div>
-            <div class="gradient-box">งานที่ 4.</div>
-        </div>
-    </div>
+/* =========================================
+   7. หัวข้อ (H2)
+========================================= */
+h2{
+    color:#ff4fa3;
+    font-size:1.8rem;
+    margin-bottom:20px;
+    border-bottom:4px solid #ffd1e8;
+    display:inline-block;
+    padding-bottom:6px;
+}
 
-</body>
-</html>
+/* =========================================
+   8. ส่วนแสดงโปรเจกต์ (.project)
+========================================= */
+.project{
+    background:linear-gradient(135deg,#fff0f8,#f3ebff);
+    border-left:8px solid #ff66b2;
+    padding:20px;
+    margin-bottom:20px;
+    border-radius:18px;
+    transition:.3s;
+}
+
+.project:hover{
+    transform:scale(1.03);
+    box-shadow:0 12px 25px rgba(255,105,180,.25);
+}
+
+.project h3{
+    color:#b84d8d;
+    margin-bottom:10px;
+}
+
+/* =========================================
+   9. รายการทักษะ (UL) -> 🛠️ แก้ไขตรงนี้ให้เป็นแนวตั้งทั้งหมด
+========================================= */
+ul{
+    list-style:none;
+    display:flex;            /* เปลี่ยนจาก grid เป็น flex */
+    flex-direction:column;   /* บังคับให้เรียงต่อกันเป็นแนวตั้งลงมา */
+    gap:15px;                /* ระยะห่างระหว่างช่องเท่าเดิม */
+    padding:0;
+    width: 100%;
+}
+
+ul li{
+    background:linear-gradient(135deg,#ff7eb3,#c77dff);
+    color:white;
+    text-align:center;
+    padding:14px;            /* เพิ่มความหนาของกล่องขึ้นเล็กน้อยให้กดง่ายขึ้น */
+    border-radius:30px;
+    font-weight:600;
+    transition:.3s;
+    width: 100%;             /* ยืดกล่องให้กว้างเต็มพื้นที่ของ Section */
+}
+
+ul li:hover{
+    transform:translateY(-5px);
+    box-shadow:0 8px 20px rgba(199,125,255,.35);
+}
+
+/* =========================================
+   10. รูปภาพ (Image)
+========================================= */
+img{
+    max-width:100%;
+    display:block;
+    margin:auto;
+    border-radius:20px;
+    box-shadow:0 8px 20px rgba(0,0,0,.15);
+}
+
+/* =========================================
+   11. ปุ่ม (Button)
+========================================= */
+button,
+.btn{
+    background:linear-gradient(135deg,#ff5ea8,#c77dff);
+    color:white;
+    border:none;
+    padding:12px 25px;
+    border-radius:30px;
+    cursor:pointer;
+    font-size:16px;
+    font-weight:600;
+    transition:.3s;
+}
+
+button:hover,
+.btn:hover{
+    transform:scale(1.08);
+    box-shadow:0 10px 25px rgba(255,105,180,.35);
+}
+
+/* =========================================
+   12. ลิงก์ (Link)
+========================================= */
+a{
+    color:#ff4fa3;
+    text-decoration:none;
+    font-weight:600;
+}
+
+a:hover{
+    color:#b84d8d;
+}
+
+/* =========================================
+   13. ส่วนท้ายเว็บไซต์ (Footer)
+========================================= */
+footer{
+    background:linear-gradient(135deg,#ff66b2,#c77dff);
+    color:white;
+    text-align:center;
+    padding:25px;
+    margin-top:50px;
+    border-top-left-radius:35px;
+    border-top-right-radius:35px;
+    font-size:15px;
+}
